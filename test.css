@@ -69,6 +69,10 @@ footer {
     margin-top: 2rem;
 }
 
+.imagen--ods{
+    height: 50px;
+}
+
 /* Transiciones para interactividad */
 a {
     transition: background 0.3s, color 0.3s;
