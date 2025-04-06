@@ -9,7 +9,7 @@ body {
     background-color: #f4f4f4;
 }
 
-#carbonDisplay {
+#energyDisplay {
     background: #1c1c1c;
     color: #a0ffae;
     font-family: monospace;
@@ -99,6 +99,10 @@ footer {
     background: #333;
     color: white;
     margin-top: 2rem;
+}
+
+footer #audioButton {
+    display: none;
 }
 
 .imagen--ods{

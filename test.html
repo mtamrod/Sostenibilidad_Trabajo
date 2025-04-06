@@ -199,41 +199,31 @@
                 Estas métricas permiten tomar decisiones informadas para mejorar la sostenibilidad tecnológica del proyecto.
             </p>
 
-            <div id="carbonDisplay">Calculando impacto ambiental...</div>
+            <div id="energyDisplay">Consumo energético estimado: 0.0000 Wh</div>
 
             <script>
-              // Obtiene la URL actual de la página
-              const siteUrl = encodeURIComponent(window.location.href);
-              
-              // Proxy para evitar problemas de CORS
-              const proxyUrl = 'https://api.allorigins.win/raw?url=';
-              const targetUrl = `https://api.websitecarbon.com/site?url=${siteUrl}`;
-            
-              // Realiza la solicitud usando el proxy
-              fetch(proxyUrl + encodeURIComponent(targetUrl))
-                .then(response => response.json())
-                .then(data => {
-                  // Verifica la estructura de la respuesta
-                  // Por ejemplo, WebsiteCarbon API devuelve:
-                  // data.statistics.energy -> consumo energético en Wh
-                  // data.statistics.co2.grid.grams -> gramos de CO₂
-                  const energyWh = data.statistics && data.statistics.energy ? data.statistics.energy : undefined;
-                  const co2Grams = data.statistics && data.statistics.co2 && data.statistics.co2.grid 
-                                    ? data.statistics.co2.grid.grams 
-                                    : undefined;
-            
-                  document.getElementById("carbonDisplay").innerHTML = `
-                    🌍 Impacto ambiental por visita:<br>
-                    🔌 Energía: <strong>${energyWh ? energyWh.toFixed(3) : "N/A"} Wh</strong><br>
-                    💨 CO₂: <strong>${co2Grams ? co2Grams.toFixed(2) : "N/A"} g</strong><br>
-                    ☁️ Hosting verde: ${data.green ? '✅ Sí' : '❌ No'}
-                  `;
-                })
-                .catch(err => {
-                  document.getElementById("carbonDisplay").textContent = "No se pudo obtener el impacto ambiental.";
-                  console.error(err);
-                });
-            </script>            
+                let energyUsed = 0;
+                const powerDrawWatts = getEstimatedPowerDraw();
+
+                function getEstimatedPowerDraw() {
+                    const ua = navigator.userAgent.toLowerCase();
+                    if (/mobile|android|iphone|ipad/.test(ua)) {
+                        return 1.5; 
+                    } else if (/windows|mac|linux/.test(ua)) {
+                        return 15; 
+                    }
+                    return 10; 
+                }
+
+                function updateEnergyDisplay() {
+                    energyUsed = powerDrawWatts / 3600; 
+                    document.getElementById("energyDisplay").textContent = 
+                        "Consumo energético estimado: " + energyUsed.toFixed(6) + " Wh";
+                }
+
+                setInterval(updateEnergyDisplay, 1000); 
+            </script>
+                    
                    
         </section>
 
@@ -247,6 +237,20 @@
 
     <footer>
         <p>&copy; 2024 Agenda 2030. Todos los derechos reservados.</p>
+        <button id="audioButton" style="display:none;">Secret Button</button>
+        <audio id="audioPlayer" src="images/shhh.mp3"></audio>
+        <script>
+            const audioButton = document.getElementById('audioButton');
+            const audioPlayer = document.getElementById('audioPlayer');
+        
+            audioButton.addEventListener('click', () => {
+                audioPlayer.play();
+            });
+        
+            setTimeout(() => {
+                audioButton.style.display = 'block'; 
+            }, 3000); 
+        </script>        
     </footer>
 </body>
 </html>
