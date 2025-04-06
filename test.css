@@ -34,30 +34,43 @@ header h1 {
     font-weight: bold;
 }
 
+/* Estilos para la barra de navegación */
+nav {
+    background-color: #2e3b4e; /* Color de fondo oscuro */
+    padding: 8px 0; /* Menos espaciado superior e inferior */
+    font-family: 'Arial', sans-serif; /* Fuente */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
 
 nav ul {
-    background: #333;
-    color: white;
-    list-style: none;
+    list-style-type: none; /* Elimina los puntos de la lista */
     margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: center;
+    display: flex; /* Flexbox para organizar los elementos horizontalmente */
+    justify-content: center; /* Centra los enlaces horizontalmente */
 }
 
-nav ul li {
-    margin: 0;
+nav li {
+    margin: 0 15px; /* Menos espaciado entre los elementos */
 }
 
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    padding: 0.5rem 1rem;
-    display: block;
+nav a {
+    color: white; /* Color de texto blanco */
+    text-decoration: none; /* Elimina el subrayado */
+    font-size: 14px; /* Tamaño de fuente reducido */
+    padding: 6px 12px; /* Relleno más pequeño */
+    display: inline-block; /* Hace que el padding funcione correctamente */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transición suave al pasar el ratón */
 }
 
-nav ul li a:hover {
-    background: #444;
+nav a:hover {
+    background-color: #4caf50; /* Color de fondo al pasar el ratón */
+    color: #fff; /* Color del texto al pasar el ratón */
+    border-radius: 5px; /* Bordes redondeados */
+}
+
+nav a:active {
+    background-color: #45a049; /* Color de fondo al hacer clic */
 }
 
 main {
@@ -95,4 +108,58 @@ footer {
 /* Transiciones para interactividad */
 a {
     transition: background 0.3s, color 0.3s;
+}
+
+/* Estilos adicionales para el modo eco */
+body.eco-mode {
+    background-color: #e0e0e0; /* Fondo más suave para reducir el consumo de energía */
+    color: #555; /* Color de texto más suave */
+}
+
+/* Reduce las animaciones y transiciones en modo eco */
+body.eco-mode nav a {
+    transition: none; /* Elimina la transición en los enlaces */
+}
+
+body.eco-mode nav {
+    box-shadow: none; /* Elimina la sombra de la barra de navegación */
+}
+
+body.eco-mode header {
+    background-color: #4CAF50; /* Mantiene un verde más suave en el header */
+    box-shadow: none; /* Elimina la sombra del encabezado */
+}
+
+body.eco-mode main {
+    box-shadow: none; /* Elimina la sombra del contenido */
+}
+
+body.eco-mode #carbonDisplay {
+    background: #333; /* Fondo más oscuro */
+    color: #a0ffae;
+}
+
+/* Reduce la saturación de las imágenes en modo eco */
+body.eco-mode img {
+    filter: grayscale(100%) contrast(50%);
+}
+
+/* Estilos para el botón del modo eco */
+#ecoButton {
+    background-color: #000000; /* Botón verde */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+#ecoButton:hover {
+    background-color: #a7aaa7; /* Cambio de color al pasar el ratón */
+}
+
+#ecoButton:active {
+    background-color: #a7aaa7; /* Color al hacer clic */
 }

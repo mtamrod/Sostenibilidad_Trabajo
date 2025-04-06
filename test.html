@@ -9,12 +9,37 @@
 <body>
     <header>
         <h1>Agenda 2030 y los Objetivos de Desarrollo Sostenible</h1>
+        <button id="ecoButton">Modo Eco</button>
+        <script>
+            // Selecciona el botón y el body
+            const ecoButton = document.getElementById('ecoButton');
+            const body = document.body;
+        
+            // Añadir el evento de clic al botón
+            ecoButton.addEventListener('click', () => {
+                // Alternar la clase 'eco-mode' en el body
+                body.classList.toggle('eco-mode');
+                
+                // Cambiar el texto del botón según el modo activado
+                if (body.classList.contains('eco-mode')) {
+                    ecoButton.textContent = 'Modo Normal'; // Cambia el texto a "Modo Normal" cuando está activado el modo eco
+                } else {
+                    ecoButton.textContent = 'Modo Eco'; // Vuelve al texto original cuando el modo eco está desactivado
+                }
+            });
+        </script>        
     </header>
 
     <nav>
         <ul>
             <li><a href="#agenda">¿Qué es la Agenda 2030?</a></li>
             <li><a href="#ods">Los 17 ODS</a></li>
+            <li><a href="#green-computing">Green Computing</a></li>
+            <li><a href="#evaluacion">Evaluación ASG</a></li>
+            <li><a href="#guia-sostenibilidad">Guía Práctica de Sostenibilidad</a></li>
+            <li><a href="#ciclo-vida">Análisis del Ciclo de Vida</a></li>
+            <li><a href="#plan-sostenibilidad">Simulación de un Plan de Sostenibilidad</a></li>
+            <li><a href="#metricas-desempeno">Métricas de Desempeño y Sostenibilidad</a></li>
             <li><a href="#licencia">Licencia</a></li>
         </ul>
     </nav>
@@ -65,7 +90,6 @@
                 <img src="images/16.png" alt="Decimosexto ODS" class="imagen--ods">
                 <li>Alianzas para lograr los objetivos</li>
                 <img src="images/17.png" alt="Decimoseptimo ODS" class="imagen--ods">
-
             </ol>
         </section>
 
@@ -84,6 +108,80 @@
                     <li><strong>ODS 13</strong>: Acción por el clima</li>
                 </ul>
             </p>
+            
+            <h3>Retos Ambientales del Sector Tecnológico</h3>
+            <p>
+                La tecnología, especialmente en áreas como los centros de datos, tiene un alto impacto ambiental. El consumo energético de estos centros de datos es elevado, 
+                ya que requieren grandes cantidades de electricidad para operar y refrigerar los servidores. Además, los dispositivos electrónicos tienen una vida útil limitada, 
+                lo que genera una cantidad significativa de residuos electrónicos que, en muchos casos, no se reciclan adecuadamente, contribuyendo a la contaminación.
+            </p>
+
+            <h3>Prototipo de "Modo Eco" y Justificación</h3>
+            <p>
+                Un "modo eco" en dispositivos y servidores puede reducir el consumo de energía y minimizar el impacto ambiental. Este modo puede optimizar el uso de recursos 
+                de manera que se reduzca el procesamiento innecesario, se ajusten las configuraciones de hardware para consumir menos energía y se favorezcan prácticas de 
+                mantenimiento que prolonguen la vida útil de los equipos. Este tipo de diseños pueden resultar en una importante reducción de las emisiones de CO₂ y el uso de energía.
+            </p>
+
+            <h3>Simulación del Impacto Ambiental</h3>
+            <p>
+                A continuación, se presenta una simulación de cómo el uso de tecnologías sostenibles en servidores podría reducir la huella de carbono del proyecto. 
+                Esta simulación tiene en cuenta el consumo energético de los servidores y la eficiencia de los recursos utilizados.
+            </p>
+
+        </section>
+
+        <section id="guia-sostenibilidad">
+            <h2>Guía Práctica de Sostenibilidad</h2>
+            <p>
+                A continuación, se presenta una guía práctica de sostenibilidad basada en las mejores prácticas de Green Computing implementadas en este proyecto. 
+                Estas prácticas pueden aplicarse a otros contextos profesionales para reducir el impacto ambiental de las tecnologías utilizadas:
+            </p>
+            <ul>
+                <li>Optimizaciones de energía: Reducir el consumo de energía ajustando el hardware y el software para que operen en su máxima eficiencia.</li>
+                <li>Reciclaje de equipos: Asegurarse de que los dispositivos y componentes electrónicos sean reciclados adecuadamente al final de su vida útil.</li>
+                <li>Uso de energía renovable: Siempre que sea posible, emplear fuentes de energía renovables para alimentar servidores y centros de datos.</li>
+                <li>Diseño eficiente: Desarrollar software que consuma los menores recursos posibles, minimizando el uso de CPU y memoria.</li>
+                <li>Reducción de residuos: Minimizar el desperdicio de equipos electrónicos mediante la reutilización y la reparación en lugar de la eliminación.</li>
+            </ul>
+        </section>
+
+        <section id="ciclo-vida">
+            <h2>Análisis del Ciclo de Vida</h2>
+            <p>
+                El ciclo de vida del hardware y el software es un aspecto crítico para evaluar el impacto ambiental. Desde la fabricación de los dispositivos hasta 
+                su desecho, cada fase tiene un impacto energético y de recursos. Es crucial diseñar tanto el hardware como el software con un enfoque sostenible, 
+                que favorezca la reusabilidad y el bajo consumo energético. Esto incluye:
+            </p>
+            <ul>
+                <li><strong>Fabricación:</strong> Selección de materiales sostenibles y procesos de producción que minimicen el uso de recursos.</li>
+                <li><strong>Uso:</strong> Optimización de la eficiencia energética durante la operación de dispositivos y servidores.</li>
+                <li><strong>Final de vida útil:</strong> Implementación de prácticas de reciclaje y reutilización de equipos obsoletos.</li>
+            </ul>
+        </section>
+
+        <section id="plan-sostenibilidad">
+            <h2>Simulación de un Plan de Sostenibilidad</h2>
+            <p>
+                Este proyecto puede estructurarse como un plan de sostenibilidad para una empresa, con el objetivo de reducir su impacto ambiental. El plan incluye:
+            </p>
+            <ul>
+                <li><strong>Objetivos:</strong> Reducir el consumo energético, minimizar los residuos electrónicos y optimizar el uso de recursos.</li>
+                <li><strong>Grupos de interés:</strong> Empleados, proveedores de tecnología, clientes, organismos reguladores y la comunidad en general.</li>
+                <li><strong>Acciones:</strong> Implementación de tecnologías más eficientes, promoción de la reutilización de equipos, integración de energías renovables, etc.</li>
+            </ul>
+        </section>
+
+        <section id="metricas-desempeno">
+            <h2>Métricas de Desempeño y Sostenibilidad</h2>
+            <p>
+                Las métricas de sostenibilidad son fundamentales para evaluar el éxito del proyecto. Algunas de las métricas clave incluyen:
+            </p>
+            <ul>
+                <li><strong>Consumo energético reducido:</strong> Medir la reducción en el consumo de energía debido a la implementación de tecnologías eficientes.</li>
+                <li><strong>Eficiencia del servidor:</strong> Evaluar cómo los servidores y dispositivos gestionan los recursos de manera óptima para minimizar el consumo de energía.</li>
+                <li><strong>Emisiones de CO₂:</strong> Calcular la cantidad de CO₂ ahorrado mediante el uso de tecnologías verdes y energías renovables.</li>
+            </ul>
         </section>
 
         <section id="evaluacion">
@@ -100,30 +198,43 @@
             <p>
                 Estas métricas permiten tomar decisiones informadas para mejorar la sostenibilidad tecnológica del proyecto.
             </p>
+
             <div id="carbonDisplay">Calculando impacto ambiental...</div>
 
             <script>
-                const siteUrl = encodeURIComponent(window.location.href);
+              // Obtiene la URL actual de la página
+              const siteUrl = encodeURIComponent(window.location.href);
+              
+              // Proxy para evitar problemas de CORS
+              const proxyUrl = 'https://api.allorigins.win/raw?url=';
+              const targetUrl = `https://api.websitecarbon.com/site?url=${siteUrl}`;
             
-                fetch(`https://api.websitecarbon.com/site?url=${siteUrl}`)
-                    .then(response => response.json())
-                    .then(data => {
-                        const gramsCO2 = data.statistics.co2.grid.grams;
-                        const energyWh = data.statistics.energy;
+              // Realiza la solicitud usando el proxy
+              fetch(proxyUrl + encodeURIComponent(targetUrl))
+                .then(response => response.json())
+                .then(data => {
+                  // Verifica la estructura de la respuesta
+                  // Por ejemplo, WebsiteCarbon API devuelve:
+                  // data.statistics.energy -> consumo energético en Wh
+                  // data.statistics.co2.grid.grams -> gramos de CO₂
+                  const energyWh = data.statistics && data.statistics.energy ? data.statistics.energy : undefined;
+                  const co2Grams = data.statistics && data.statistics.co2 && data.statistics.co2.grid 
+                                    ? data.statistics.co2.grid.grams 
+                                    : undefined;
             
-                        document.getElementById("carbonDisplay").innerHTML = `
-                            🌍 Estimación por visita:<br>
-                            🔌 <strong>${energyWh.toFixed(3)} Wh</strong> de energía<br>
-                            💨 <strong>${gramsCO2.toFixed(2)} g de CO₂</strong><br>
-                            ☁️ Hosting verde: ${data.green ? '✅ Sí' : '❌ No'}
-                        `;
-                    })
-                    .catch(err => {
-                        document.getElementById("carbonDisplay").textContent = 
-                            "No se pudo obtener el impacto ambiental.";
-                        console.error(err);
-                    });
+                  document.getElementById("carbonDisplay").innerHTML = `
+                    🌍 Impacto ambiental por visita:<br>
+                    🔌 Energía: <strong>${energyWh ? energyWh.toFixed(3) : "N/A"} Wh</strong><br>
+                    💨 CO₂: <strong>${co2Grams ? co2Grams.toFixed(2) : "N/A"} g</strong><br>
+                    ☁️ Hosting verde: ${data.green ? '✅ Sí' : '❌ No'}
+                  `;
+                })
+                .catch(err => {
+                  document.getElementById("carbonDisplay").textContent = "No se pudo obtener el impacto ambiental.";
+                  console.error(err);
+                });
             </script>            
+                   
         </section>
 
         <section id="licencia">
