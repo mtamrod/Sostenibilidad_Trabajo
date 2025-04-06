@@ -69,6 +69,63 @@
             </ol>
         </section>
 
+        <section id="green-computing">
+            <h2>Green Computing y los ODS</h2>
+            <p>
+                El <strong>Green Computing</strong> o computación verde promueve prácticas tecnológicas sostenibles que minimizan el impacto ambiental. 
+                Esto incluye el uso eficiente de la energía, reciclaje de equipos electrónicos y el diseño de software con bajo consumo de recursos.
+            </p>
+            <p>
+                Estas prácticas están directamente relacionadas con varios <strong>Objetivos de Desarrollo Sostenible</strong>, como:
+                <ul>
+                    <li><strong>ODS 7</strong>: Energía asequible y no contaminante</li>
+                    <li><strong>ODS 9</strong>: Industria, innovación e infraestructura</li>
+                    <li><strong>ODS 12</strong>: Producción y consumo responsables</li>
+                    <li><strong>ODS 13</strong>: Acción por el clima</li>
+                </ul>
+            </p>
+        </section>
+
+        <section id="evaluacion">
+            <h2>Evaluación ASG y Métricas de Sostenibilidad</h2>
+            <p>
+                Para evaluar el impacto de este proyecto en términos de <strong>Aspectos Ambientales, Sociales y de Gobernanza (ASG)</strong>, 
+                se pueden considerar las siguientes métricas:
+            </p>
+            <ul>
+                <li><strong>Consumo energético</strong> de los servidores o dispositivos utilizados.</li>
+                <li><strong>Eficiencia del servidor</strong> en términos de carga y recursos consumidos.</li>
+                <li><strong>Emisiones de CO₂</strong> asociadas al funcionamiento del sitio web.</li>
+            </ul>
+            <p>
+                Estas métricas permiten tomar decisiones informadas para mejorar la sostenibilidad tecnológica del proyecto.
+            </p>
+            <div id="carbonDisplay">Calculando impacto ambiental...</div>
+
+            <script>
+                const siteUrl = encodeURIComponent(window.location.href);
+            
+                fetch(`https://api.websitecarbon.com/site?url=${siteUrl}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        const gramsCO2 = data.statistics.co2.grid.grams;
+                        const energyWh = data.statistics.energy;
+            
+                        document.getElementById("carbonDisplay").innerHTML = `
+                            🌍 Estimación por visita:<br>
+                            🔌 <strong>${energyWh.toFixed(3)} Wh</strong> de energía<br>
+                            💨 <strong>${gramsCO2.toFixed(2)} g de CO₂</strong><br>
+                            ☁️ Hosting verde: ${data.green ? '✅ Sí' : '❌ No'}
+                        `;
+                    })
+                    .catch(err => {
+                        document.getElementById("carbonDisplay").textContent = 
+                            "No se pudo obtener el impacto ambiental.";
+                        console.error(err);
+                    });
+            </script>            
+        </section>
+
         <section id="licencia">
             <h2>Licencia</h2>
             <p>
@@ -82,6 +139,3 @@
     </footer>
 </body>
 </html>
-
-
-
