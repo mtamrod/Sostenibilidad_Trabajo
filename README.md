@@ -1,5 +1,7 @@
 # Creación de una Página Web sobre la Agenda 20/30 en Raspberry Pi
-
+![Bot Demo](https://img.shields.io/badge/Status-Activo-brightgreen) 
+![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
+![Telegram](https://img.shields.io/badge/Telegram-Bot_API-26A5E4)
 ## Objetivo General
 Desarrollar una página web informativa sobre la Agenda 20/30, alojarla en una Raspberry Pi alimentada por energía solar y calcular el consumo energético del proyecto.
 
